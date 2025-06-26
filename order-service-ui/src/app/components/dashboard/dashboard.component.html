@@ -1,0 +1,96 @@
+
+
+
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary" *ngIf="storedValue">
+    
+    <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+           <div></div>
+           <br>
+            
+            <div class="navbar-user d-lg-none">
+                
+                <div class="dropdown">
+                    
+                    <a id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-parent-child">
+                            <img alt="Image Placeholder" src="https://www.spectrum-bd.com/wp-content/uploads/2015/02/new_logo-1.png" class="avatar avatar- rounded-circle">
+                            <span class="avatar-child avatar-badge bg-success"></span>
+                        </div>
+                    </a>
+                    
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
+                        <a class="dropdown-item">Profile</a>
+                        <a class="dropdown-item">Settings</a>
+                        <a  class="dropdown-item">Billing</a>
+                        <hr class="dropdown-divider">
+                        <a (click)="logOut()"  class="dropdown-item">Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/products">
+                   <i class="bi bi-cart-plus"></i> Product
+                </a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/orders">
+                     <i class="bi bi-cart-plus"></i> Order
+                </a>
+                </li> 
+                </ul>
+                
+              
+                
+                <div class="mt-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="bi bi-person-square"></i> Account
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logOut()" >
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                        </div>
+
+                       
+                        
+                       
+                        <div class="col-sm-6 col-12 text-sm-end">
+                            <div class="mx-n1">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </header>
+        
+        <router-outlet></router-outlet>
+    </div>
+</div>
